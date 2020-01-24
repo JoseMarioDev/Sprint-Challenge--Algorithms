@@ -12,3 +12,8 @@ c)
 Time Complexity is O(n) because the number of operations needed is directly related to the size of n. We are performing a loop using recursion. With each loop we subtract 1 from bunnies, bringing us a step closer to our base case where we want to break out of the loop. Since we just decrease by one each time, we reach our base case in the same amount of steps as the number we pass in to the function.
 
 ## Exercise II
+
+I would setup a for loop and iterate through the list(n-stories). we are trying to find f(floor egg isnt broken).
+I would have a nested loop while we havent reached the top of n, inside loop would be while f isnt broken. once we reach the floor where f is broken, we can take n-1 story and that would be optimum height where we can drop an egg.
+
+since it's a nested loop the complexity would be O(log n)
