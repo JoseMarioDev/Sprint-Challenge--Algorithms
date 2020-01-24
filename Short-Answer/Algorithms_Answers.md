@@ -6,7 +6,9 @@ a)
 Time Complexity is O(n) because the number of operations needed is directly related to the size of (n). As n increases, there will be (n) number of loops until the condition returns false and the loop ends.
 
 b)
+Time Complexity is O(log n). As (n) grows in size the amount of operations needed does NOT increase linearly with (n). This is a nested loop, J is set to 2x itself each loop, we basically cut away half of the problem each iteration.
 
 c)
+Time Complexity is O(n) because the number of operations needed is directly related to the size of n. We are performing a loop using recursion. With each loop we subtract 1 from bunnies, bringing us a step closer to our base case where we want to break out of the loop. Since we just decrease by one each time, we reach our base case in the same amount of steps as the number we pass in to the function.
 
 ## Exercise II
