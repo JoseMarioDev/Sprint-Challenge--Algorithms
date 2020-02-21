@@ -94,49 +94,32 @@ class SortingRobot:
         """
         return self._light == "ON"
 
-        """
-Plan for sort:
-Turn light on.
-while robot light is on:
-    turn light off.
-    while can_move_right:
-        Robot picks current_item.
-        Robot moves right.
-        Robot compares numbers
-        If in_hand is less than current number:
-            light on
-            swap
-            move right
-        if in_hand is greater than current number:
-            move right
-    else:
-        while robot can_move_left:
-            move left.
-    return self
-"""
-
     def sort(self):
+        # turn light on
         self.set_light_on()
+        # while light is on, turn light off
         while self.light_is_on():
             self.set_light_off()
-
+            # while robot can move right, pick up current item move right
             while self.can_move_right():
-
+                # Robot compares numbers,If in_hand is less than current number, light on, swap, move right
                 if self.compare_item() == -1:
                     self.set_light_on()
                     self.swap_item()
                     self.move_right()
-
+                # if in_hand is greater than current number, move right
                 elif self.compare_item() == 1:
                     self.move_right()
-
+                # if in_hand is less than, swap, move right
                 else:
                     self.set_light_on()
                     self.swap_item()
                     self.move_right()
+                # nothing left to compare, can no longer go right, needs to go left
             if not self.can_move_right():
                 if self.compare_item() == None:
                     self.swap_item()
+            #     while robot can_move_left,move left.
                 while self.can_move_left():
                     self.move_left()
 
